@@ -55,7 +55,7 @@ export const updateUser = async (req, res) => {
         return res.status(404).send({ message: "Usuário não encontrado!" });
     }
 
-    if (UserById && UserByEmail.id !== id) {
+    if (UserByEmail && UserByEmail.id !== id) {
         return res.status(409).send({ message: "Email já cadastrado!" });
     }
 
