@@ -24,7 +24,8 @@ export const getUserById = (req, res) => {
         return res.status(404).send({ message: "Usuário não encontrado!" });
     }
 
-    return res.status(200).send({ message: "Usuário encontrado", user });
+    return res
+    .status(200).send({ message: "Usuário encontrado", user });
 };
 
 export const createUser = async (req, res) => {
@@ -63,9 +64,7 @@ export const updateUser = async (req, res) => {
 
     const user = UserRepository.updateUser(id, name, email, passwordHash);
 
-    return res 
-    .status(200)
-    .send({ message: "Usuário atualizado com sucesso!", user });
+    return res .status(200).send({ message: "Usuário atualizado com sucesso!", user });
 };
 
 export const deleteUser = (req, res) => {
@@ -79,7 +78,5 @@ export const deleteUser = (req, res) => {
 
     UserRepository.deleteUser(id);
 
-    return res
-        .status(200)
-        .send({ message: "Usuário deletado com sucesso!" });
+    return res.status(200).send({ message: "Usuário deletado com sucesso!" });
 };
